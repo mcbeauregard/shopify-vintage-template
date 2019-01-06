@@ -1,4 +1,9 @@
 <div class="section-header text-center">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+
   <h1 class="article__title">{{ article.title }}</h1>
   {% if section.settings.blog_show_author %}
     <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>

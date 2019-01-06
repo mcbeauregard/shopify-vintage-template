@@ -4,6 +4,12 @@
   data-section-type="product"
   data-enable-history-state="true"
 >
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+
+
   {% comment %}
     Get first variant, or deep linked one
   {% endcomment %}
@@ -70,9 +76,23 @@
         </div>
       {% endfor %}
 
+      <script>
+        $(document).ready(function(){
+          $('.product_image_sizeoom')
+            .wrap('<span style="display:inline-block"></span>')
+            .css('display', 'block')
+            .parent()
+            .zoomImg({
+              url: $(this).find('img').attr('data-zoom')
+            });
+          });
+
+      </script>
+
       <noscript>
         {% capture product_image_size %}{{ height }}x{% endcapture %}
         <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: {{ height }}px;">
+        <img class="zoomImg" src=”{{ featured_image | img_url: product_image_size, scale: product_image_scale }}” alt="{{ featured_image.alt }} data-zoom="{{ featured_image | img_url: '1024x1024', scale: 2 }}>
       </noscript>
 
       {% if product.images.size > 1 %}

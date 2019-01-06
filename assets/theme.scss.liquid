@@ -504,7 +504,6 @@ $z-index-giftcard-corners: 3;
 $z-index-giftcard-tooltip: 4;
 $z-index-giftcard-code: 5;
 
-
 /*================ VENDOR ================*/
 /*============================================================================
   Slick Slider 1.6.0
@@ -1543,6 +1542,7 @@ li {
   margin-bottom: $gutter-site;
 }
 
+
 /*================ Hero and slideshow headers ================*/
 .mega-title,
 .mega-subtitle {
@@ -1637,6 +1637,34 @@ symbol {
     }
   }
 }
+
+/*================ Zoom Icon ================*/
+.zoomImg {
+    cursor:url({{ 'iconZoomed.png' | asset_url }}), default;
+}
+
+/*===
+.zoomImg {
+  cursor:url('iconZoomOut.png'), default;
+}
+
+.zoomImg {
+  display:inline-block;
+  position: relative;
+}
+
+/* magnifying glass icon */
+/*===
+.zoomImg:after {
+  content:'';
+  display:block;
+  width:33px;
+  height:33px;
+  position:absolute;
+  top:0;
+  right:0;
+  cursor:url('iconZoomOut.png'), default;
+} ===*/
 
 /*============================================================================
   A generic way to visually hide content while

@@ -58,10 +58,8 @@
       },
       moneyFormat: {{ shop.money_format | json }}
     }
-
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
-
 
   {%- if template.directory == 'customers' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
