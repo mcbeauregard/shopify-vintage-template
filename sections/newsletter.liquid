@@ -1,8 +1,8 @@
 <div class="newsletter-section{% if section.settings.show_background %} index-section--newsletter-background{% endif %}">
-  <div class="page-width">
-    <div class="section-header text-center">
+  <div class="newsletter-container">
+    <div class="newsletter-header text-center">
       {% if section.settings.section_title != blank %}
-        <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
+        <div class="newsletter-heading">{{ section.settings.section_title | escape }}</div>
       {% endif %}
       {% if section.settings.subheading != blank %}
         <div class="rte">{{ section.settings.subheading }}</div>
@@ -14,7 +14,7 @@
         {% include 'form-status', form_id: formId, success_message: 'general.newsletter_form.confirmation' %}
 
         <input type="hidden" name="contact[tags]" value="newsletter">
-        <input type="email"
+        <input class="newsletter-email" type="email"
           name="contact[email]"
           id="{{ formId }}-email"
           class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
@@ -24,8 +24,9 @@
           aria-required="true"
           autocorrect="off"
           autocapitalize="off"
+          style="margin-right: 10px;
           {% if form.errors %} aria-invalid="true" aria-describedby="{{ formId }}-email-error"{% endif %}>
-        <span class="input-group__btn">
+        <span class="newsletter-button">
           <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe">
             <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
           </button>

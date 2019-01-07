@@ -1369,7 +1369,6 @@ h6 {
   line-height: 1.2;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  font-family: "PT Sans",sans-serif;
   color: #838199;
   letter-spacing: 0.1em;
 
@@ -1396,7 +1395,6 @@ h2 {
   font-size: em(floor($font-size-header * 0.78));
   text-transform: uppercase;
   text-align: center;
-  line-height: 2.5em;
 
   @include media-query($small) {
     font-size: em(floor(($font-size-header * 0.78) * 0.9));
@@ -1436,6 +1434,24 @@ h6 {
   @include media-query($small) {
     font-size: em(floor(($font-size-header * 0.54) * 0.9));
   }
+}
+
+.newsletter-heading {
+  margin: 0 0 ($section-spacing-small / 2);
+  font-family: $font-stack-header;
+  font-style: $font-style-header;
+  font-weight: $font-weight-header;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: #838199;
+  letter-spacing: 0.1em;
+
+  font-size: 1.25em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2em;
+  margin-bottom: 10px;
 }
 
 .h1 {
@@ -2397,6 +2413,7 @@ textarea {
 
   .form-vertical & {
     margin-bottom: $gutter-site;
+    margin-right: 15px;
   }
 
   &.input-group--error {
@@ -3256,7 +3273,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 .password__input-group {
-  margin: 0 auto $gutter-site;
+  margin: 0 auto;
   max-width: 35rem;
 }
 
@@ -5708,6 +5725,17 @@ $toolbar-height-small: 46px;
     margin: $footer-spacing-extra-small 0 0 0;
     width: 100%;
     border: 1px solid #e8e7e7;
+    margin-right: 10px;
+  }
+
+  .newsletter-email{
+    margin: 0 10px 0 0;
+    border: 1px solid #e8e7e7;
+  }
+
+  .newsletter-button{
+    margin: 0 10px 15px 0;
+    border: 1px solid #e8e7e7;
   }
 
   .site-footer__item--full-width & {
@@ -5928,6 +5956,7 @@ $toolbar-height-small: 46px;
   background-color: #F7F7F7;
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .hero__btn {
@@ -6488,7 +6517,17 @@ $toolbar-height-small: 46px;
 }
 
 .newsletter-section {
-  padding-top: $section-spacing;
+  padding: 70px 0;
+}
+
+.newsletter-header  {
+  margin-bottom: 15px;
+}
+
+.newsletter-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .index-section--newsletter-background {
