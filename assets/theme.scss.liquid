@@ -1323,7 +1323,8 @@ blockquote {
 
 code,
 pre {
-  font-family: Consolas, monospace;
+  color: #838199;
+  font-family: "PT Sans",sans-serif;
   font-size: 1em;
 }
 
@@ -1368,6 +1369,9 @@ h6 {
   line-height: 1.2;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  font-family: "PT Sans",sans-serif;
+  color: #838199;
+  letter-spacing: 0.1em;
 
   a {
     color: inherit;
@@ -1378,8 +1382,10 @@ h6 {
 
 h1 {
   font-size: em(floor($font-size-header * 1.35));
-  text-transform: none;
-  letter-spacing: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 2.5em;
 
   @include media-query($small) {
     font-size: em(floor($font-size-header * 1.25));
@@ -1389,12 +1395,8 @@ h1 {
 h2 {
   font-size: em(floor($font-size-header * 0.78));
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-
-  font-family: PtSansWebBold;
   text-align: center;
   line-height: 2.5em;
-  color: #838199;
 
   @include media-query($small) {
     font-size: em(floor(($font-size-header * 0.78) * 0.9));
@@ -1413,6 +1415,7 @@ h3 {
 
 h4 {
   font-size: em(floor($font-size-header * 0.68));
+  text-transform: uppercase;
 
   @include media-query($small) {
     font-size: em(floor(($font-size-header * 0.68) * 0.9));
@@ -1509,6 +1512,7 @@ p {
   margin: 0 0 ($section-spacing-small / 1.8);
   font-family: PT Sans;
   font-weight: normal;
+  color: #838199;
 
   @include media-query($small) {
     font-size: em($font-size-base - 1);
@@ -1803,7 +1807,7 @@ a {
   }
 
   &.classic-link {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -1956,6 +1960,7 @@ a[href^="tel"] {
 .return-link-wrapper {
   margin-top: ($section-spacing * 1.5);
   margin-bottom: 0;
+  text-decoration: none;
 
   @include media-query($small) {
     margin-top: $section-spacing;
@@ -1969,6 +1974,10 @@ a[href^="tel"] {
   bottom: 0;
   left: 0;
   z-index: 2;
+}
+
+a.full-width-link {
+  text-decoration: none
 }
 
 /*================ #Tables ================*/
@@ -2371,7 +2380,6 @@ textarea {
 
   a {
     display: inline-block;
-    text-decoration: underline;
     text-decoration-skip-ink: auto;
 
     &:hover {
@@ -2449,6 +2457,17 @@ textarea {
 
   a {
     padding: 3px 10px;
+    color: #4D4B56;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  a:hover {
+    padding: 3px 10px;
+    color: #66c4a1;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 }
 
@@ -2460,12 +2479,14 @@ textarea {
 .site-nav__link {
   display: block;
   white-space: nowrap;
+  border: none;
+  background-color: transparent;
 
-  .site-nav--centered & {
+.site-nav--centered & {
     padding-top: 0;
   }
 
-  .icon-chevron-down {
+.icon-chevron-down {
     width: calc(8em / 16);
     height: calc(8em / 16);
     margin-left: 0.5rem;
@@ -2480,7 +2501,6 @@ textarea {
   &:focus,
   &:not([disabled]):hover {
     .site-nav__label {
-      border-bottom-color: $color-text;
     }
   }
 }
@@ -2488,8 +2508,8 @@ textarea {
 .site-nav__label {
   border-bottom: 1px solid transparent;
 
-  .site-nav__link--active & {
-    border-bottom-color: $color-text;
+.site-nav__link--active & {
+    text-decoration: none;
   }
 }
 
@@ -3972,7 +3992,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 /*================ MODULES ================*/
 .site-header {
-  background-color: $color-body;
   position: relative;
   padding: 0 $gutter-site;
 
@@ -5590,6 +5609,7 @@ $toolbar-height-small: 46px;
 }
 
 .site-footer {
+  background-color: #f7f7f7;
   margin-top: $section-spacing;
   padding: $footer-spacing-large 0 $section-spacing 0;
 
@@ -5687,6 +5707,7 @@ $toolbar-height-small: 46px;
   .newsletter__input {
     margin: $footer-spacing-extra-small 0 0 0;
     width: 100%;
+    border: 1px solid #e8e7e7;
   }
 
   .site-footer__item--full-width & {
@@ -5840,6 +5861,9 @@ $toolbar-height-small: 46px;
   }
 }
 
+.wrapper {
+}
+
 .hero {
   position: relative;
   height: 475px;
@@ -5909,6 +5933,7 @@ $toolbar-height-small: 46px;
 .hero__btn {
   margin-top: $section-spacing / 2;
   background-color: #66c4a1;
+  color: #fff;
 }
 
 /*================ Quote slider ================*/

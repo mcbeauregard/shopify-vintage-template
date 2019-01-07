@@ -1,16 +1,20 @@
+<div class="wrapper">
+
 <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
      {% if section.settings.image %}
      data-bgset="{% include 'bgset', image: section.settings.image %}"
      data-sizes="auto"
      data-parent-fit="cover"
-     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '619x667' }});"
      {% endif %}>
   {% if section.settings.image == blank %}
     <div class="placeholder-background">
       {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% include 'site-nav' %}
     </div>
   {% endif %}
 </div>
+
 <div class="hero__inner">
   <div class="page-width text-center">
     {% if section.settings.title != blank %}
@@ -29,7 +33,7 @@
 <noscript>
   <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
 </noscript>
-
+</div>
 
 
 {% schema %}
