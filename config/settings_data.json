@@ -17,6 +17,7 @@
     "currency_format": "money_with_currency_format",
     "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
     "default_currency": "USD",
+    "favicon": "",
     "type_header_font": "work_sans_n6",
     "type_header_base_size": 26,
     "type_base_font": "work_sans_n4",
