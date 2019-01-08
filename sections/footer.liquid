@@ -62,11 +62,19 @@
     line-height: 1.4em;
     font-size: 11px;
   }
+  .site-footer input-group {
+    display: inline-block;
+  }
 
   .site-footer a:hover {
     color: #66c4a1;
     text-decoration: none;
   }
+
+  .site-footer news-block{
+    display: block;
+  }
+
 </style>
 
 <footer class="site-footer" role="contentinfo">
@@ -91,6 +99,7 @@
                           {% if section.blocks.size == 1 %} site-footer__single-block--centered{% endif %}">
                   {%- assign formId = 'ContactFooter' -%}
                   {% form 'customer', id: formId, novalidate: 'novalidate' %}
+                  <div class="newsletter-input-group">
                     <div class="input-group {% if form.errors %} input-group--error{% endif %}">
                       {% include 'form-status', form_id: formId, success_message: 'general.newsletter_form.confirmation' %}
 
@@ -109,11 +118,12 @@
                         {% if form.errors %} aria-invalid="true" aria-describedby="{{ formId }}-email-error"{% endif %}>
                       <span class="input-group__btn">
                         <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe">
-                          <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                          <span class="newsletter__submit-text--large">OK</span>
                         </button>
                       </span>
                       <span id="{{ formId }}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
                     </div>
+                  </div>
                   {% endform %}
                 </div>
 
