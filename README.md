@@ -1,3 +1,3 @@
 Shopify vintage bike website using Liquid
 
-<img src='./vintage-bike-screenshot.jpg' alt='website mockup'/>
+<img src='.assets/images/vintage-bike-screenshot.jpg' alt='website mockup'/>
